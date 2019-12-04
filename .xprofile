@@ -1,0 +1,12 @@
+# fcitx inputs
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+# Map CapsLock to Esc
+setxkbmap -option 'caps:ctrl_modifier'
+setxkbmap -option 'shift:both_capslock_cancel'
+xcape -e 'Caps_Lock=Escape'
+
+# Set keyboard repeat rate
+xset r rate 400 40

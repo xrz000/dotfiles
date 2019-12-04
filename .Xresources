@@ -1,0 +1,59 @@
+!! URxvt Colorscheme
+
+! special
+URxvt.foreground: #93a1a1
+URxvt.background: #141c21
+URxvt.cursorColor: #afbfbf
+
+! black
+URxvt.color0: #263640
+URxvt.color8: #4a697d
+
+! red
+URxvt.color1: #d12f2c
+URxvt.color9: #fa3935
+
+! green
+URxvt.color2: #819400
+URxvt.color10: #a4bd00
+
+! yellow
+URxvt.color3: #b08500
+URxvt.color11: #d9a400
+
+! blue
+URxvt.color4: #2587cc
+URxvt.color12: #2ca2f5
+
+! magenta
+URxvt.color5: #696ebf
+URxvt.color13: #8086e8
+
+! cyan
+URxvt.color6: #289c93
+URxvt.color14: #33c5ba
+
+! white
+URxvt.color7: #bfbaac
+URxvt.color15: #fdf6e3
+
+!! URxvt Font
+# define DefaultFont    DejaVu Sans Mono
+# define ChineseFont    WenQuanYi Micro Hei Mono
+URxvt.font: xft:DefaultFont:size=18,xft:ChineseFont:antialias=true
+URxvt.boldfont: xft:DefaultFont:size=18:bold,xft:ChineseFont:bold:antialias=true
+
+!! URxvt Appearance
+URxvt.saveline: 2048
+URxvt.scrollBar: false 
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.transparent: true
+URxvt.shading: 10
+URxvt.blurRadius: 5
+URxvt.letterSpace: 0
+URxvt.fading: 30
+
+!! ISO 14755 Binding
+URxvt.iso14755: false
+URxvt.iso14755_52: false
