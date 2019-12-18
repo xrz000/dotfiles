@@ -36,8 +36,7 @@ markup=none
 # See the script for details.
 
 [volume]
-label=♪
-#label=VOL
+label= 
 interval=once
 signal=10
 #STEP=5%
@@ -46,32 +45,14 @@ signal=10
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
-separator=false
+label= 
 interval=30
-
-# Network interface monitoring
-#
-# If the instance is not specified, use the interface used for default route.
-# The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
-[iface]
-#IFACE=wlan0
-color=#00FF00
-interval=2
-separator=false
-
-[wifi]
-#INTERFACE=wlp3s0
-label=wifi:
-interval=2
-separator=false
 
 # Battery indicator
 #
 # The battery instance defaults to 0.
 [battery]
-label=BAT
-#label=⚡
+label= 
 interval=30
 
 # Temperature
@@ -80,20 +61,12 @@ interval=30
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [temperature]
-label=TEMP
+label= 
 interval=10
 
 # Date Time
 #
 [time]
+label= 
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=1
-
-# Generic media player support
-#
-# This displays "ARTIST - SONG" if a music is playing.
-# Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
-#[mediaplayer]
-#instance=spotify
-#interval=5
-#signal=10

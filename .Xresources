@@ -39,9 +39,10 @@ URxvt.color15: #fdf6e3
 
 !! URxvt Font
 # define DefaultFont    DejaVu Sans Mono
+# define IconFont       Inconsolata Nerd Font Mono
 # define ChineseFont    WenQuanYi Micro Hei Mono
-URxvt.font: xft:DefaultFont:size=18,xft:ChineseFont:antialias=true
-URxvt.boldfont: xft:DefaultFont:size=18:bold,xft:ChineseFont:bold:antialias=true
+URxvt.font: xft:DefaultFont:size=18,xft:ChineseFont:antialias=true,xft:IconFont:size=18
+URxvt.boldfont: xft:DefaultFont:size=18:bold,xft:ChineseFont:bold:antialias=true,xft:IconFont:bold
 
 !! URxvt Appearance
 URxvt.saveline: 2048
@@ -53,6 +54,12 @@ URxvt.shading: 10
 URxvt.blurRadius: 5
 URxvt.letterSpace: 0
 URxvt.fading: 30
+
+!! URxvt Extensions
+URxvt.perl-ext-common: default,matcher,resize-font,keyboard-select
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 !! ISO 14755 Binding
 URxvt.iso14755: false
