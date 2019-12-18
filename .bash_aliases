@@ -10,8 +10,9 @@ alias mkdir="mkdir -p"
 alias ls="ls --group-directories-first --color"
 alias ll="ls -l"
 
-alias shutdown="sudo shutdown now"
-alias reboot="sudo reboot now"
+alias shutdown="shutdown now"
+alias suspend="systemctl suspend"
+alias reboot="systemctl reboot"
 
 alias tm="tmux new-session -A -s"
 
