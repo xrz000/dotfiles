@@ -15,6 +15,14 @@ command W w !sudo tee % > /dev/null
 " Command line completion
 set wildmenu
 
+" Autocompletion
+set completeopt=longest,menuone
+"" Remove newline after pressing enter
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"" Always select an item after pressing C-N
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
 " Cursor position
 set number
 set ruler
@@ -53,6 +61,10 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
+" Splt direction
+set splitbelow
+set splitright
+
 " Move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -75,3 +87,6 @@ let g:lightline = {
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
+"" Markdown preview
+let g:preview_markdown_parser='mdr'
+let g:preview_markdown_vertical=1
