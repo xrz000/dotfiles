@@ -9,3 +9,4 @@ xcape -e 'Caps_Lock=Escape'
 
 # Set keyboard repeat rate
 xset r rate 400 40
+xbindkeys
