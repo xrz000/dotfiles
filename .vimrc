@@ -81,12 +81,12 @@ let g:vimtex_view_method='zathura'
 set laststatus=2
 set noshowmode
 let g:lightline = {
-            \ 'colorscheme': 'solarized',
+            \ 'colorscheme': 'jellybeans',
             \ }
-"" Solarized Theme
+"" Jellybeans Theme
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
+let g:jellybeans_use_term_italics=1
+colorscheme jellybeans
 "" Markdown preview
 let g:preview_markdown_parser='mdr'
 let g:preview_markdown_vertical=1
