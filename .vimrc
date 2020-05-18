@@ -2,6 +2,9 @@ set encoding=UTF-8
 " Set leader
 let mapleader = ","
 
+" Remap ; to :
+nmap ; :
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -11,6 +14,9 @@ set autoread
 
 " Use :W to sudo save
 command W w !sudo tee % > /dev/null
+
+" Completion
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Command line completion
 set wildmenu
@@ -61,7 +67,7 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" Splt direction
+" Split direction
 set splitbelow
 set splitright
 
@@ -70,6 +76,15 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Auto closing
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
 " Plugins
 execute pathogen#infect()
@@ -90,3 +105,10 @@ colorscheme jellybeans
 "" Markdown preview
 let g:preview_markdown_parser='mdr'
 let g:preview_markdown_vertical=1
+"" Vim-Flake8
+autocmd BufWritePost *.py call flake8#Flake8()
+"" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
+"" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:ultisnips_python_style='google'
