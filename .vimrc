@@ -15,9 +15,6 @@ set autoread
 " Use :W to sudo save
 command W w !sudo tee % > /dev/null
 
-" Completion
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
 " Command line completion
 set wildmenu
 
@@ -86,6 +83,14 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+" Folding
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+
+" Diff windows
+command! Difft windo diffthis
+command! Diffo windo diffoff
+
 " Plugins
 execute pathogen#infect()
 "" latex live preview
@@ -109,6 +114,19 @@ let g:preview_markdown_vertical=1
 autocmd BufWritePost *.py call flake8#Flake8()
 "" YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
+noremap <leader>gd :YcmCompleter GoTo<CR>
 "" UltiSnips
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:ultisnips_python_style='google'
+"" SimplylFold
+let g:SimpylFold_docstring_preview=1
+let g:SimpylFold_fold_import=0
+"" python-syntax
+let g:python_highlight_class_vars=1
+let g:python_highlight_exceptions=1
+let g:python_highlight_space_errors=1
+let g:python_highlight_builtins=1
+"" NerdTree
+nnoremap <C-n> :NERDTreeToggle<CR>
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
